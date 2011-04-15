@@ -1,5 +1,5 @@
 var TiDebug = {
-	message: "",
+	text: "",
 	open: false,
 	on: false,
 	init: function() {
@@ -22,13 +22,13 @@ var TiDebug = {
 			}
 		});
 	},
-	message: function(_message) {
+	message: function(_text) {
 		if(TiDebug.on) {
-			TiDebug.message = _message + "\n\n" + TiDebug.message;
-			TiDebug.label.text = TiDebug.message;
+			TiDebug.text = _text + "\n\n" + TiDebug.text;
+			TiDebug.label.text = TiDebug.text;
 		}
 		
-		Ti.API.info(_message);
+		Ti.API.info(_text);
 	}
 };
 
