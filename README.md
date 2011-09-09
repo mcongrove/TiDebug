@@ -1,5 +1,5 @@
-Usage
-=====
+Instantiation
+=============
 
 	// Include the TiDebug class
 	Ti.include("TiDebug.js");
@@ -10,9 +10,10 @@ Usage
 		appVersion: "1.0.0",
 		email: "mattcongrove@gmail.com"
 	});
-	
-	// Assign an action to open the TiDebug menu
-	
+
+Opening TiDebug Menu
+====================
+
 	// Use `toggle` to alternate display of TiDebug menu
 	Ti.Gesture.addEventListener("shake", TiDebug.toggle);
 	
@@ -24,6 +25,9 @@ Usage
 		window: TiDebug.win,
 		title: "Debug"
 	});
-	
+
+Usage
+=====
+
 	// Send a message to the TiDebug log
 	TiDebug.log("This is a debug message!");
