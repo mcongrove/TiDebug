@@ -1,13 +1,29 @@
 Usage
 =====
 
+	// Include the TiDebug class
 	Ti.include("TiDebug.js");
-	TiDebug.on = true;
 	
-	TiDebug.message("This is a debug message!");
-	TiDebug.message(JSON.stringify(myObject));
-
-Activation
-==========
-
-To activate the debug screen simply shake your device. If you have the device shake mapped to another event, edit TiDebug.js and change the "shake" listener to another gesture.
+	// Enable the TiDebug class, with configuration options (all required)
+	TiDebug.enable({
+		appName: "TiDebug",
+		appVersion: "1.0.0",
+		email: "mattcongrove@gmail.com"
+	});
+	
+	// Assign an action to open the TiDebug menu
+	
+	// Use `toggle` to alternate display of TiDebug menu
+	Ti.Gesture.addEventListener("shake", TiDebug.toggle);
+	
+	// Use `show` and `hide` to open or close TiDebug menu
+	myButton.addEventListener("click", TiDebug.show);
+	
+	// You can even make a Tab for your TabGroup, making it available at all times
+	tab = Ti.UI.createTab({
+		window: TiDebug.win,
+		title: "Debug"
+	});
+	
+	// Send a message to the TiDebug log
+	TiDebug.log("This is a debug message!");
